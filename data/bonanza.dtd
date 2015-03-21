@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Data for order placement at the Barker's Bob Burger Bar's Bigger, Better Burger Bonanza
+Order placement data for Barker's Bob Burger Bar's Bigger, Better Burger Bonanza
 -->
 
-<!-- Definition of an order: customer, order type, burgers, and any special instrcutions  -->
+<!-- An order indentifies customer, order type, burgers, and any special instrcutions  -->
 <!ELEMENT order (customer, delivery?, burger+, special?)>
 
-<!-- Customer identified by simply by their name -->
+<!-- A customer identified by simply by their name -->
 <!ELEMENT customer (#PCDATA)>
 
-<!-- An order must be eat-in, delivery, or takeout ... specified by customer -->
+<!-- An order can be eat-in, delivery, or takeout ... customer-specfied -->
 <!ATTLIST order
     type    (eatin|takeout|delivery) #REQUIRED
 >
 
-<!-- Delivery orders need instructions for delivery -->
+<!-- Delivery orders need delivery instructions -->
 <!ELEMENT delivery (#PCDATA)>
 
 <!-- Any special instructions by customer -->
@@ -30,26 +30,27 @@ Data for order placement at the Barker's Bob Burger Bar's Bigger, Better Burger 
 -->
 <!ELEMENT burger (patty, cheeses?, topping*, sauce*, instructions?, name?)>
 
-<!-- Patty types: beef, pork, turkey, bison, vegetarian , assume beef as default -->
+<!-- Patty types (assume beef): beef, pork, turkey, bison, vegetarian -->
 <!ELEMENT patty (#PCDATA)>
 <!ATTLIST patty
     type    (beef|pork|turkey|bison|vege) "beef"
 >
 
-<!-- Customer can order up to two cheese. One goes on top, one goes on the bottom. -->
+<!-- The customer can order two cheeses. One goes on top, one goes on the bottom, 
+     and unique codes are provided -->
 <!ELEMENT cheeses EMPTY>
 <!ATTLIST cheeses
     top     (american|swiss|jack|blue|gruyere|gouda|aged|goat|brie) #IMPLIED
     bottom  (american|swiss|jack|blue|gruyere|gouda|aged|goat|brie) #IMPLIED
 >
 
-<!-- Assortment of toppings available -->
+<!-- Assortment of toppings available, handled individually -->
 <!ELEMENT topping (#PCDATA)>
 <!ATTLIST topping
     type    (lettuce|tomato|raw|dill|roasted|mushrooms|salsa|bacon|chilies|fkchili|avocado|egg|porkbelly) #REQUIRED
 >
 
-<!-- Sauces available -->
+<!-- Sauces available (similar to toppings) -->
 <!ELEMENT sauce EMPTY>
 <!ATTLIST sauce
     type    (ketchup|mustard|mayo|fksauce) #REQUIRED
@@ -58,5 +59,5 @@ Data for order placement at the Barker's Bob Burger Bar's Bigger, Better Burger 
 <!-- Instructions can be anything -->
 <!ELEMENT instructions (#PCDATA)>
 
-<!-- Customer can give a name for his/her order -->
+<!-- Customer can give a name to their order -->
 <!ELEMENT name (#PCDATA)>

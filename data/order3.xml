@@ -20,11 +20,12 @@ Order #3 - Adam's ultimate feast, made to go!
     <burger>
         <patty type="turkey" />
         <cheeses top="gruyere" bottom="blue" />
-        <cheeses top="egg" />
-        <topping type="chili" />
-        <topping type="onions" />
+        <topping type="egg" />
+        <topping type="chilies" />
+        <topping type="avocado" />
         <topping type="mushrooms" />
         <sauce type="mayo" /> 
-        <instructions> Please don't forget the peanut butter ! </instructions>
+        <instructions> Please don't forget the chuncky peanut butter ! </instructions>
+        <name>The Muenster Burger</name>
     </burger>  
 </order>
