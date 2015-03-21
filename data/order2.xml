@@ -8,9 +8,9 @@
 <order type="takeout">
     <customer>George</customer>
     <burger>
-            <patty type="beef" />
-            <cheeses top="american" bottom="swiss" />
-            <sauce type="ketchup" />
+        <patty type="beef" />
+        <cheeses top="american" bottom="swiss" />
+        <sauce type="ketchup" />
     </burger>
     <burger>
         <patty type="vege" />
